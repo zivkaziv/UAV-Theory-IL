@@ -1,7 +1,19 @@
-"use strict";
-var http_1 = require("@angular/http");
-exports.contentHeaders = new http_1.Headers();
-exports.contentHeaders.append('Accept', 'application/json');
-exports.contentHeaders.append('Content-Type', 'application/json');
+System.register(["@angular/http"], function (exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
+    var http_1, contentHeaders;
+    return {
+        setters: [
+            function (http_1_1) {
+                http_1 = http_1_1;
+            }
+        ],
+        execute: function () {
+            exports_1("contentHeaders", contentHeaders = new http_1.Headers());
+            contentHeaders.append('Accept', 'application/json');
+            contentHeaders.append('Content-Type', 'application/json');
+        }
+    };
+});
 
-//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC9jb21tb24vaGVhZGVycy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQUEsc0NBQXdDO0FBRTNCLFFBQUEsY0FBYyxHQUFHLElBQUksY0FBTyxFQUFFLENBQUM7QUFDNUMsc0JBQWMsQ0FBQyxNQUFNLENBQUMsUUFBUSxFQUFFLGtCQUFrQixDQUFDLENBQUM7QUFDcEQsc0JBQWMsQ0FBQyxNQUFNLENBQUMsY0FBYyxFQUFFLGtCQUFrQixDQUFDLENBQUMiLCJmaWxlIjoiYXBwL2NvbW1vbi9oZWFkZXJzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgSGVhZGVycyB9IGZyb20gJ0Bhbmd1bGFyL2h0dHAnO1xuXG5leHBvcnQgY29uc3QgY29udGVudEhlYWRlcnMgPSBuZXcgSGVhZGVycygpO1xuY29udGVudEhlYWRlcnMuYXBwZW5kKCdBY2NlcHQnLCAnYXBwbGljYXRpb24vanNvbicpO1xuY29udGVudEhlYWRlcnMuYXBwZW5kKCdDb250ZW50LVR5cGUnLCAnYXBwbGljYXRpb24vanNvbicpOyJdfQ==
+//# sourceMappingURL=headers.js.map

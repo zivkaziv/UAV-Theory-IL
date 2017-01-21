@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../client/app/models/user.model.ts"],"names":[],"mappings":";;;;;;;YAAA;gBAII,cAAY,QAAe,EAAE,QAAe;gBAAG,CAAC;gBACpD,WAAC;YAAD,CALA,AAKC,IAAA;;QAAA,CAAC","file":"user.model.js","sourcesContent":["export class User {\n    username: string;\n    password: string;\n\n    constructor(username:string, password:string) {}\n}"]}

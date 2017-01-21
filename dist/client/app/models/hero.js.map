@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../client/app/models/hero.ts"],"names":[],"mappings":"AAAA;;GAEG;;;;;;;8BAFH;;eAEG;YAEH;gBAAA;gBAKA,CAAC;gBAAD,WAAC;YAAD,CALA,AAKC,IAAA;;QAAA,CAAC","file":"hero.js","sourcesContent":["/**\n * Created by Moiz.Kachwala on 02-06-2016.\n */\n\nexport class Hero {\n    _id: string;\n    power: string;\n    amountPeopleSaved: number;\n    name: string;\n}"]}
