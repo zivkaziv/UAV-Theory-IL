@@ -1,0 +1,114 @@
+<!--<nav class="navbar navbar-inverse" role="navigation">
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menu-collapse">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" href="/dashboard-studens">{{ title }}</a>
+	</div>
+	<div class="collapse navbar-collapse navbar-menu-collapse">
+		<ul class="nav navbar-nav navbar-right">
+			<li class="active"> <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a></li>
+			<li class="active"><a routerLink="/heroes" routerLinkActive="active">Heroes</a></li>
+		</ul>
+	</div>
+</nav>
+<div class="container">
+	<router-outlet></router-outlet>
+</div>-->
+
+<!--Header-->
+<div id="main-container">
+	<md-toolbar id="main-toolbar">
+		<div layout="column" class="menu-button">
+			<button md-icon-button (click)="start.toggle()">
+				<md-icon style="color:#ffffff">menu</md-icon>
+			</button>
+		</div>
+		<span class="example-fill-remaining-space"></span>
+		<span style="color: #ffffff">terra<span style="color: #99ccff">scan</span></span>
+	</md-toolbar>
+
+	<!--Sidenav manu-->
+	<md-sidenav-layout class="left-navigation" id='main-sidenav'>
+		<md-sidenav #start mode="side" opened="true" align="end">
+			<expansion-panels-container>
+				<expansion-panel>
+					<expansion-panel-title>
+						מטרולוגיה
+					</expansion-panel-title>
+					<!--<expansion-panel-description-hidden>
+						Description when hidden
+					</expansion-panel-description-hidden>-->
+				
+					<!--<expansion-panel-description-toggled>
+						Description when toggled
+					</expansion-panel-description-toggled>-->
+				
+					<expansion-panel-content>
+						<md-list>
+							<md-list-item *ngFor="let chepter of meterologyChepters">
+								<!--<md-icon>done</md-icon>														-->
+								<a md-line routerLink={{chepter.refLink}}>{{chepter.name}}</a>
+							</md-list-item>
+						</md-list>
+					</expansion-panel-content>
+				</expansion-panel>
+
+
+				<expansion-panel>
+					<expansion-panel-title>
+						תאוריה
+					</expansion-panel-title>
+					<!--<expansion-panel-description-hidden>
+						Description when hidden
+					</expansion-panel-description-hidden>-->
+				
+					<!--<expansion-panel-description-toggled>
+						Description when toggled
+					</expansion-panel-description-toggled>-->
+				
+					<expansion-panel-content>
+						<md-list>
+							<md-list-item *ngFor="let chepter of meterologyChepters">
+								<!--<md-icon>done</md-icon>														-->
+								<a md-line routerLink={{chepter.refLink}}>{{chepter.name}}</a>
+							</md-list-item>
+						</md-list>
+					</expansion-panel-content>
+				</expansion-panel>
+
+
+
+				<expansion-panel>
+					<expansion-panel-title>
+						מבחנים
+					</expansion-panel-title>
+					<!--<expansion-panel-description-hidden>
+						Description when hidden
+					</expansion-panel-description-hidden>-->
+				
+					<!--<expansion-panel-description-toggled>
+						Description when toggled
+					</expansion-panel-description-toggled>-->
+				
+					<expansion-panel-content>
+						<md-list>
+							<md-list-item *ngFor="let chepter of meterologyChepters">
+								<!--<md-icon>done</md-icon>														-->
+								<a md-line routerLink={{chepter.refLink}}>{{chepter.name}}</a>
+							</md-list-item>
+						</md-list>
+					</expansion-panel-content>
+				</expansion-panel>
+			</expansion-panels-container>
+		</md-sidenav>
+
+		<!--content-->
+		<div class="container">
+			<router-outlet></router-outlet>
+		</div>
+	</md-sidenav-layout>
+</div>
