@@ -5,7 +5,7 @@ import express = require('express');
 import path = require('path');
 
 import HeroRoutes = require('../routes/HeroRoutes');
-
+import LoginRoutes = require('../routes/LoginRoutes');
 var app = express();
 
 class Routes {
@@ -13,7 +13,7 @@ class Routes {
     get routes() {
 
         app.use("/", new HeroRoutes().routes);
-        
+        app.use("/", new LoginRoutes().routes);
         return app;
     }
 }

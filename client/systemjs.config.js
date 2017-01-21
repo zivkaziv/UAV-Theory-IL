@@ -8,13 +8,15 @@ var isPublic = typeof window != "undefined";
     'rxjs':                       (isPublic)? 'rxjs' : 'node_modules/rxjs',
     '@angular/material':          (isPublic)? '@angular/material/bundles/material.umd.js' : 'node_modules/@angular/material/bundles/material.umd.js',
     'hammerjs':                   (isPublic)? 'hammerjs/hammer.js': 'node_modules/hammerjs/hammer.js',
-    'ng2-expansion-panels':       (isPublic)? 'ng2-expansion-panels/dist': 'node_modules/ng2-expansion-panels/dist'
+    'ng2-expansion-panels':       (isPublic)? 'ng2-expansion-panels/dist': 'node_modules/ng2-expansion-panels/dist',
+    'angular2-jwt':               (isPublic)? 'angular2-jwt': 'node_modules/angular2-jwt'
   };
   // packages tells the System loader how to load when no filename and/or no extension
   var packages = {
     'app':                        { main: 'main.js',  defaultExtension: 'js' },
     'rxjs':                       { defaultExtension: 'js' },
-    'ng2-expansion-panels':       { main: 'ng2-expansion-panels.bundle.js',  defaultExtension: 'js' }
+    'ng2-expansion-panels':       { main: 'ng2-expansion-panels.bundle.js',  defaultExtension: 'js' },
+    'angular2-jwt':               { main:'angular2-jwt.js', defaultExtension: 'js' }
   };
   var ngPackageNames = [
     'common',
