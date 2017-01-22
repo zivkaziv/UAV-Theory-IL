@@ -1,0 +1,26 @@
+.login-card{
+    width: 30%;
+    direction: ltr;
+}
+
+.login-card .full-width-field{
+    width: 100%;
+}
+
+md-card > md-toolbar {
+  margin: -24px 0 24px -24px;
+  width: calc(100% + 48px);
+  min-height: 40px;
+}
+
+.login-card md-card-actions{
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+}
+
+.layout-container{
+    display: flex;
+    margin-top: 5%;
+    justify-content: center;
+}
