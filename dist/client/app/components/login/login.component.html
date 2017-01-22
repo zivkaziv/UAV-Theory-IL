@@ -1,18 +1,20 @@
 
 <div class="layout-container">
-    <md-card class="login-card">
-        <md-toolbar color="primary">Welcome</md-toolbar>    
-        <md-card-content>
-            <md-input-container class="full-width-field">
-                <input md-input placeholder="Username" [(ngModel)]="user.username" >
-            </md-input-container>
-            <md-input-container class="full-width-field">    
-                <input md-input placeholder="Password" [(ngModel)]="user.password" type="password" >
-            </md-input-container>    
-        </md-card-content>
+    <div class="login-card-container">
+        <md-toolbar color="primary">Welcome</md-toolbar>                
+        <md-card class="login-card">
+            <md-card-content>
+                <md-input-container class="full-width-field">
+                    <input md-input placeholder="Username" [(ngModel)]="user.username" >
+                </md-input-container>
+                <md-input-container class="full-width-field">    
+                    <input md-input placeholder="Password" [(ngModel)]="user.password" type="password" >
+                </md-input-container>    
+            </md-card-content>
 
-    <md-card-actions layout="row" layout-align="center center">
-        <button md-raised-button (click)="login()" color="primary">LOGIN</button>
-    </md-card-actions>
-    </md-card>
+            <md-card-actions layout="row" layout-align="center center">
+                <button md-raised-button (click)="login()" color="primary">LOGIN</button>
+            </md-card-actions>
+        </md-card>
+    </div>
 </div>

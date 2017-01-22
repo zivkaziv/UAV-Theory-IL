@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import { AuthenticationService } from './services/authentication.service';
 
 @Component({
     selector:'my-app',
@@ -7,6 +8,10 @@ import {Component} from '@angular/core';
 })
 
 export class AppComponent {
+    constructor(
+        private authService: AuthenticationService) {
+         }
+
     title = 'Tour of Heroes';
 
     meterologyChepters = [
