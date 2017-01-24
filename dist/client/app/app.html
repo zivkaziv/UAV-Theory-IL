@@ -3,7 +3,7 @@
 <div id="main-container">
 	<md-toolbar id="main-toolbar">
 		<div layout="column" class="menu-button">
-			<button md-icon-button (click)="start.toggle()" [disabled]="authService.isLoggedin()">
+			<button md-icon-button (click)="start.toggle()" [disabled]="!authService.isLoggedin()">
 				<md-icon style="color:#ffffff">menu</md-icon>
 			</button>
 		</div>
