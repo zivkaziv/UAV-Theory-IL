@@ -1,5 +1,5 @@
 /**
- * Created by Moiz.Kachwala on 15-06-2016.
+ * Created by Ziv Kalderon on 15-06-2016.
  */
 
 import UserModel = require("./../model/UserModel");
