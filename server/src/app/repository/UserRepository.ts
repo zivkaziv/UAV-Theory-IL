@@ -4,7 +4,7 @@
 
 import UserModel = require("./../model/UserModel");
 import IUserModel = require("./../model/interfaces/UserModel");
-import UserSchema = require("../dataAccess/schemas/Userschema");
+import UserSchema = require("../dataAccess/schemas/UserObjectSchema");
 import RepositoryBase = require("./BaseRepository");
 
 class UserRepository  extends RepositoryBase<IUserModel> {
