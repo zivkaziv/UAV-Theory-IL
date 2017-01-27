@@ -1,6 +1,13 @@
 export class User {
-    username: string;
+    _id:string;
+    email: string;
     password: string;
-
-    constructor(username:string, password:string) {}
+    name: string;
+    passwordResetToken: string;
+    passwordResetExpires: Date;
+    gender: string;
+    location: string;
+    picture: string;
+    chapters: [{}];
+    constructor(email:string, password:string) {}
 }

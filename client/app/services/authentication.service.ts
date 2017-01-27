@@ -14,7 +14,7 @@ export class AuthenticationService {
 
     logout() {
         localStorage.removeItem("id_token");
-        localStorage.removeItem("username");
+        localStorage.removeItem("email");
         this.router.navigate(['login']);
     }
 
@@ -25,7 +25,7 @@ export class AuthenticationService {
             response => {
                 if (JSON.stringify(response.json().success) === "true") {
                     localStorage.setItem('id_token', JSON.stringify(response.json().token));
-                    localStorage.setItem('username', JSON.stringify(response.json().username));
+                    localStorage.setItem('email', JSON.stringify(response.json().email));
                     this.router.navigate(['dashboard']);
                 }else {
                     window.alert(JSON.stringify(response.json().message));

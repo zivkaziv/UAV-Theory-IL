@@ -3,10 +3,18 @@
  */
 
 import mongoose = require("mongoose");
+import ChapterModel = require("../ChapterModel");
 
 interface UserModel extends mongoose.Document {
-    username: string;
+    email: string;
     password: string;
+    name: string;
+    passwordResetToken: string;
+    passwordResetExpires: Date;
+    gender: string;
+    location: string;
+    picture: string;
+    chapters: [ChapterModel];
 }
 
-export = UserModel;
+export = UserModel ;

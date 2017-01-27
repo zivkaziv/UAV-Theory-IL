@@ -29,5 +29,5 @@ class HeroSchema {
         return schema;
     }
 }
-var schema = mongooseConnection.model<IHeroModel>("Heroes", HeroSchema.schema);
-export = schema;""
+var schema = mongooseConnection.model("Heroes", HeroSchema.schema);
+export = schema;

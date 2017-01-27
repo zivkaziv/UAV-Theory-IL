@@ -2,26 +2,44 @@
  * Created by Moiz.Kachwala on 15-06-2016.
  */
 
-import IHeroModel = require('./interfaces/HeroModel');
+import IUserModel = require('./interfaces/UserModel');
+import ChapterModel = require("./ChapterModel");
 
-class HeroModel {
+class UserModel {
 
-    private _heroModel: IHeroModel;
+    private _userModel: IUserModel;
 
-    constructor(heroModel: IHeroModel) {
-        this._heroModel = heroModel;
+    constructor(userModel: IUserModel) {
+        this._userModel = userModel;
     }
-    get name (): string {
-        return this._heroModel.name;
-    }
-
-    get power (): string {
-        return this._heroModel.power;
+    get email (): string {
+        return this._userModel.email;
     }
 
-    get amountPeopleSaved (): number {
-        return this._heroModel.amountPeopleSaved;
+    get password (): string {
+        return this._userModel.password;
+    }
+
+    get passwordResetToken (): string {
+        return this._userModel.passwordResetToken;
+    }
+
+    get passwordResetExpires (): Date {
+        return this._userModel.passwordResetExpires;
+    }
+
+    get gender (): string {
+        return this._userModel.gender;
+    }
+
+    get picture (): string {
+        return this._userModel.picture;
+    }
+
+    get chapters (): [ChapterModel] {
+        return this._userModel.chapters;
     }
 }
-Object.seal(HeroModel);
-export =  HeroModel;
+Object.seal(UserModel);
+export =  UserModel;
+

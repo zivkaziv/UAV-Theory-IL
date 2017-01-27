@@ -16,10 +16,11 @@ class HeroRoutes {
         var controller = this._userController;
 
         router.post("/auth/login", controller.login);
+        router.post("/auth/account", controller.create);
+        router.put("/auth/account", controller.update);
+        router.delete("/auth/account", controller.delete);
         return router;
     }
-
-
 }
 
 Object.seal(HeroRoutes);

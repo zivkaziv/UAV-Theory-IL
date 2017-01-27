@@ -5,6 +5,7 @@
 import IRead = require("./interfaces/Read");
 import IWrite = require("./interfaces/Write");
 import IHeroModel = require("./../model/interfaces/HeroModel");
+import IUserModel = require("./../model/interfaces/UserModel");
 
 import mongoose = require("mongoose");
 
@@ -41,7 +42,7 @@ class RepositoryBase<T extends mongoose.Document> implements IRead<T>, IWrite<T>
 
 
     private toObjectId (_id: string) : mongoose.Types.ObjectId {
-        return mongoose.Types.ObjectId.createFromHexString(_id)
+        return mongoose.Types.ObjectId.createFromHexString(_id);
     }
 
 }

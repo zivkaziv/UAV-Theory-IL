@@ -4,6 +4,7 @@
 
 import DataAccess = require('../DataAccess');
 import IUserModel = require("./../../model/interfaces/UserModel");
+import ChapterModel = require("../../model/ChapterModel");
 
 var mongoose = DataAccess.mongooseInstance;
 var mongooseConnection = DataAccess.mongooseConnection;
@@ -12,18 +13,25 @@ class UserSchema {
 
     static get schema () {
         var schema =  mongoose.Schema({
-            username : {
-                type: String,
+            email: { type: String,
+                unique: true,
                 required: true
             },
             password: {
                 type: String,
                 required: true
-            }
+            },
+            name : String,
+            passwordResetToken: String,
+            passwordResetExpires: Date,
+            gender : String,
+            location: String,
+            picture: String,
+            chapters : { type : Array , "default" : [] }
         });
 
         return schema;
     }
 }
-var schema = mongooseConnection.model<IUserModel>("Users", UserSchema.schema);
+var schema = mongooseConnection.model("Users", UserSchema.schema);
 export = schema;
