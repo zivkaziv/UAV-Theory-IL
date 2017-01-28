@@ -8,6 +8,7 @@ import IBaseController = require("./BaseController");
 import IHeroModel = require("./../app/model/interfaces/HeroModel");
 import jwt = require('jsonwebtoken');
 import IUserModel = require("../app/model/interfaces/UserModel");
+import UserModel = require("../app/model/UserModel");
 var Constants = require("./../config/constants/constants");
 
 class UserController {
@@ -23,14 +24,27 @@ class UserController {
             };
 
             try {
-                var token = jwt.sign(user, Constants.LOGIN_SECRET, {
-                    expiresIn: 60 * 60 // expires in 1 hours
-                });
-                res.json({
-                    success: true,
-                    message: 'Enjoy your token!',
-                    token: token,
-                    email: email
+                let userBusiness = new UserBusiness();
+                userBusiness.login(user, (error, userFromDb) => {
+                    if(error){
+                        console.log(error);
+                    }else {
+                        //in case we've got the user
+                        if (userFromDb.email){
+                            var token = jwt.sign(user, Constants.LOGIN_SECRET, {
+                                expiresIn: 60 * 60 // expires in 1 hours
+                            });
+                            res.json({
+                                success: true,
+                                message: 'Enjoy your token!',
+                                token: token,
+                                email: userFromDb.email,
+                                user: userFromDb
+                            });
+                        }else{
+                            res.status(401).send({ msg: 'Invalid email or password' });
+                        }
+                    }
                 });
             } catch (err) {
                 console.log(err);

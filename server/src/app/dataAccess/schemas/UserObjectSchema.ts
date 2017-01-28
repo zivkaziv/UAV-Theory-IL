@@ -5,15 +5,17 @@
 import DataAccess = require('../DataAccess');
 import IUserModel = require("./../../model/interfaces/UserModel");
 import ChapterModel = require("../../model/ChapterModel");
+import bcrypt = require('bcrypt-nodejs');
 
 var mongoose = DataAccess.mongooseInstance;
 var mongooseConnection = DataAccess.mongooseConnection;
 
 class UserSchema {
 
-    static get schema () {
-        var schema =  mongoose.Schema({
-            email: { type: String,
+    static get schema() {
+        var schema = mongoose.Schema({
+            email: {
+                type: String,
                 unique: true,
                 required: true
             },
@@ -21,17 +23,31 @@ class UserSchema {
                 type: String,
                 required: true
             },
-            name : String,
+            name: String,
             passwordResetToken: String,
             passwordResetExpires: Date,
-            gender : String,
+            gender: String,
             location: String,
             picture: String,
-            chapters : { type : Array , "default" : [] }
+            chapters: {type: Array, "default": []}
+        });
+
+        schema.pre('save', function (next) {
+            var user = this;
+            if (!user.isModified('password')) {
+                return next();
+            }
+            bcrypt.genSalt(10, function (err, salt) {
+                bcrypt.hash(user.password, salt, null, function (err, hash) {
+                    user.password = hash;
+                    next();
+                });
+            });
         });
 
         return schema;
     }
 }
+
 var schema = mongooseConnection.model("Users", UserSchema.schema);
 export = schema;

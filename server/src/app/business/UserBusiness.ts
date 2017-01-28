@@ -6,6 +6,7 @@ import UserRepository = require("./../repository/UserRepository");
 import IUserBusiness = require("./interfaces/UserBusiness");
 import IUserModel = require("./../model/interfaces/UserModel");
 import UserModel = require("./../model/UserModel");
+import bcrypt = require('bcrypt-nodejs');
 
 
 class UserBusiness implements IUserBusiness {
@@ -43,6 +44,37 @@ class UserBusiness implements IUserBusiness {
         this._userRepository.findById(_id, callback);
     }
 
+    comparePassword = function (password:string, user:IUserModel, callback:(error: any, isMatch: boolean) => void) {
+    bcrypt.compare(password, user.password, function (err, isMatch) {
+        callback(err, isMatch);
+    });
+};
+
+    login(user:any, callback: (error: any, result: any) => void) {
+        console.log(user);
+        this._userRepository.findByCondition({email: user.email }, (error, foundUser) => {
+            if (error) {
+                console.log(error);
+            } else {
+                console.log(foundUser);
+                if (foundUser) {
+                    this.comparePassword(user.password, foundUser, (err, isMatch) => {
+                        if (err) {
+                            console.log(err);
+                        } else {
+                            if (isMatch) {
+                                callback(null, foundUser);
+                            }else{
+                                callback(null, {});
+                            }
+                        }
+                    });
+                }else{
+                    callback(null, {});
+                }
+            }
+        });
+    }
 }
 
 

@@ -11,7 +11,7 @@ import mongoose = require("mongoose");
 
 class RepositoryBase<T extends mongoose.Document> implements IRead<T>, IWrite<T> {
 
-    private _model: mongoose.Model<mongoose.Document>;
+    protected _model: mongoose.Model<mongoose.Document>;
 
     constructor (schemaModel: mongoose.Model<mongoose.Document>) {
         this._model = schemaModel;
@@ -40,6 +40,9 @@ class RepositoryBase<T extends mongoose.Document> implements IRead<T>, IWrite<T>
         this._model.findById( _id, callback);
     }
 
+    findByCondition (cond:Object, callback: (error: any, result: any) => void) {
+        this._model.findOne(cond, callback);
+    }
 
     private toObjectId (_id: string) : mongoose.Types.ObjectId {
         return mongoose.Types.ObjectId.createFromHexString(_id);

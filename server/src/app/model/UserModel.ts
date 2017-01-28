@@ -12,6 +12,7 @@ class UserModel {
     constructor(userModel: IUserModel) {
         this._userModel = userModel;
     }
+
     get email (): string {
         return this._userModel.email;
     }
