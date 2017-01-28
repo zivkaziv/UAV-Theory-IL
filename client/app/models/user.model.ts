@@ -9,5 +9,5 @@ export class User {
     location: string;
     picture: string;
     chapters: [{}];
-    constructor(email:string, password:string) {}
+    constructor() {}
 }

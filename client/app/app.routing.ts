@@ -6,6 +6,7 @@ import { HeroesComponent }      from './components/heroes/heroes.component';
 import { HeroDetailComponent }  from './components/heroDetail/hero-detail.component';
 import { AuthGuard } from './common/auth.guard';
 import { LoginComponent } from './components/login/login.component';
+import {RegisterComponent} from "./components/register/register.component";
 
 
 const appRoutes: Routes = [
@@ -38,6 +39,10 @@ const appRoutes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
   }
 ];
 

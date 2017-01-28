@@ -1,8 +1,8 @@
-.login-card-container{
+.register-card-container{
     /*width: 70%;*/
 }
 
-.login-card .full-width-field{
+.register .full-width-field{
     width: 100%;
 }
 
@@ -12,7 +12,11 @@
   min-height: 40px;
 }*/
 
-.login-card md-card-actions{
+.register md-card-content{
+    flex-direction: column;
+}
+
+.register md-card-actions{
     display: flex;
     flex-direction: row-reverse;
     padding: 16px;
@@ -23,7 +27,7 @@
     flex-direction: column;
     margin-top: 5%;
     margin-left: 5%;
-    margin-right: 5%;    
+    margin-right: 5%;
     align-items: center;
     justify-content: center;
     direction: ltr;

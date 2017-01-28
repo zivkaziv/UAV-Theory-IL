@@ -20,6 +20,7 @@ import { MaterialModule } from '@angular/material';
 import { ExpansionPanelsModule } from 'ng2-expansion-panels';
 
 import { AuthGuard } from './common/auth.guard';
+import {RegisterComponent} from "./components/register/register.component";
 
 @NgModule({
   imports: [
@@ -36,7 +37,8 @@ import { AuthGuard } from './common/auth.guard';
     DashboardComponent,
     HeroDetailComponent,
     DashboardStudentComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   providers: [
     HeroService,
