@@ -1,0 +1,34 @@
+.register-card-container{
+    /*width: 70%;*/
+}
+
+.register .full-width-field{
+    width: 100%;
+}
+
+/*md-card > md-toolbar {
+  margin: -24px 0 24px -24px;
+  width: calc(100% + 48px);
+  min-height: 40px;
+}*/
+
+.register md-card-content{
+    flex-direction: column;
+}
+
+.register md-card-actions{
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 16px;
+}
+
+.layout-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    align-items: center;
+    justify-content: center;
+    direction: ltr;
+}

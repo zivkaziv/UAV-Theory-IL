@@ -1,0 +1,27 @@
+
+<div class="layout-container">
+    <div class="register-card-container">
+        <md-toolbar color="primary">Register</md-toolbar>
+        <md-card class="register-card">
+            <md-card-content>
+                <md-input-container class="full-width-field">
+                    <input md-input placeholder="Name" [(ngModel)]="user.name" type="text" >
+                </md-input-container>
+                <md-input-container class="full-width-field">
+                    <input md-input type="email" placeholder="Email" [(ngModel)]="user.email" >
+                </md-input-container>
+                <md-input-container class="full-width-field">
+                    <input md-input placeholder="Password" [(ngModel)]="user.password" type="password" >
+                </md-input-container>
+                <md-input-container class="full-width-field">
+                    <input md-input placeholder="Address" [(ngModel)]="user.location" type="text" >
+                </md-input-container>
+            </md-card-content>
+
+            <md-card-actions layout="row" layout-align="center center">
+                <button md-raised-button (click)="register()" color="primary">Register</button>
+                <button md-raised-button (click)="cancel()" color="primary">Cancel</button>
+            </md-card-actions>
+        </md-card>
+    </div>
+</div>
