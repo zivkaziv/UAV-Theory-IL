@@ -15,14 +15,27 @@ var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var user_model_1 = require("../../models/user.model");
 var authentication_service_1 = require("../../services/authentication.service");
+var forms_1 = require("@angular/forms");
 var RegisterComponent = (function () {
     function RegisterComponent(router, authService) {
         this.router = router;
         this.authService = authService;
+        this.registerForm = new forms_1.FormGroup({
+            firstName: new forms_1.FormControl('', [forms_1.Validators.required]),
+            lastName: new forms_1.FormControl('', [forms_1.Validators.required]),
+            id: new forms_1.FormControl('', [forms_1.Validators.required, forms_1.Validators.minLength(7)]),
+            company: new forms_1.FormControl('', []),
+            gender: new forms_1.FormControl('male', [forms_1.Validators.required]),
+            phoneNumber: new forms_1.FormControl('', [forms_1.Validators.required, forms_1.Validators.minLength(9)]),
+            birthday: new forms_1.FormControl('', [forms_1.Validators.required]),
+            email: new forms_1.FormControl('', [forms_1.Validators.required]),
+            password: new forms_1.FormControl('', [forms_1.Validators.required, forms_1.Validators.minLength(6)])
+        });
         this.user = new user_model_1.User();
     }
     RegisterComponent.prototype.register = function () {
-        this.authService.register(this.user);
+        // console.log(this.registerForm.value);
+        this.authService.register(this.registerForm.value);
     };
     RegisterComponent.prototype.cancel = function () {
         window.history.back();

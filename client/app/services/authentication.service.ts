@@ -47,11 +47,11 @@ export class AuthenticationService {
         this.http.post('/api/auth/account', body, { headers: contentHeaders })
             .subscribe(
                 response => {
-                    if (JSON.stringify(response.json().success) === "success") {
-                        // localStorage.setItem('id_token', JSON.stringify(response.json().token));
-                        // localStorage.setItem('email', JSON.stringify(response.json().email));
-                        // user = response.json().user;
-                        // console.log(user);
+                    if (JSON.stringify(response.json().success) === "true") {
+                        localStorage.setItem('id_token', JSON.stringify(response.json().token));
+                        localStorage.setItem('email', JSON.stringify(response.json().email));
+                        user = response.json().user;
+                        console.log(user);
                         this.router.navigate(['dashboard']);
                     }else {
                         window.alert(JSON.stringify(response.json().message));

@@ -1,5 +1,6 @@
 .login-card-container{
     /*width: 70%;*/
+    direction: rtl;
 }
 
 .login-card .full-width-field{
@@ -17,6 +18,10 @@
     flex-direction: row-reverse;
     padding: 16px;
 }
+
+/*.login-card md-input-container{*/
+    /*direction: ltr;*/
+/*}*/
 
 .layout-container{
     display: flex;

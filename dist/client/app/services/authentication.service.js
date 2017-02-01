@@ -50,11 +50,11 @@ var AuthenticationService = (function () {
         var body = JSON.stringify(user);
         this.http.post('/api/auth/account', body, { headers: headers_1.contentHeaders })
             .subscribe(function (response) {
-            if (JSON.stringify(response.json().success) === "success") {
-                // localStorage.setItem('id_token', JSON.stringify(response.json().token));
-                // localStorage.setItem('email', JSON.stringify(response.json().email));
-                // user = response.json().user;
-                // console.log(user);
+            if (JSON.stringify(response.json().success) === "true") {
+                localStorage.setItem('id_token', JSON.stringify(response.json().token));
+                localStorage.setItem('email', JSON.stringify(response.json().email));
+                user = response.json().user;
+                console.log(user);
                 _this.router.navigate(['dashboard']);
             }
             else {

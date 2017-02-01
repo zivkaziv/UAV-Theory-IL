@@ -30,6 +30,7 @@ class UserController {
                         console.log(error);
                     }else {
                         //in case we've got the user
+                        userFromDb.lastLogin = new Date();
                         if (userFromDb.email){
                             var token = jwt.sign(user, Constants.LOGIN_SECRET, {
                                 expiresIn: 60 * 60 // expires in 1 hours
@@ -40,6 +41,9 @@ class UserController {
                                 token: token,
                                 email: userFromDb.email,
                                 user: userFromDb
+                            });
+                            userBusiness.update(userFromDb._id, userFromDb, (err, result) => {
+                                console.log('updated');
                             });
                         }else{
                             res.status(401).send({ msg: 'Invalid email or password' });
@@ -60,10 +64,23 @@ class UserController {
         try {
 
             var user: IUserModel = <IUserModel>req.body;
+            user.lastLogin = new Date();
             var userBusiness = new UserBusiness();
             userBusiness.create(user, (error, result) => {
-                if(error) res.send({"error": "error" + error});
-                else res.send({"success": "success"});
+                if (error){
+                    res.send({"error": "error" + error});
+                } else{
+                    var token = jwt.sign(user, Constants.LOGIN_SECRET, {
+                        expiresIn: 60 * 60 // expires in 1 hours
+                    });
+                    res.json({
+                        success: true,
+                        message: 'Enjoy your token!',
+                        token: token,
+                        email: result.email,
+                        user: result
+                    });
+                }
             });
         }
         catch (e)  {

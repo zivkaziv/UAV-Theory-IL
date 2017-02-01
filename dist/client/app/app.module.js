@@ -34,6 +34,7 @@ AppModule = __decorate([
             platform_browser_1.BrowserModule,
             http_1.HttpModule,
             forms_1.FormsModule,
+            forms_1.ReactiveFormsModule,
             app_routing_1.routing,
             material_1.MaterialModule.forRoot(),
             ng2_expansion_panels_1.ExpansionPanelsModule

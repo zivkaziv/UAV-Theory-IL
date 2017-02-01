@@ -23,9 +23,19 @@ class UserSchema {
                 type: String,
                 required: true
             },
-            name: String,
+            firstName: String,
+            lastName: String,
+            id: String,
+            company: String,
+            phoneNumber: String,
             passwordResetToken: String,
             passwordResetExpires: Date,
+            licenseValidUntil: Date,
+            purchaseDate: Date,
+            paypalToken: String,
+            birthday: Date,
+            isDeleted: Boolean,
+            lastLogin:Date,
             gender: String,
             location: String,
             picture: String,
@@ -51,3 +61,4 @@ class UserSchema {
 
 var schema = mongooseConnection.model("Users", UserSchema.schema);
 export = schema;
+
