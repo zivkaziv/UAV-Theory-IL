@@ -21,6 +21,8 @@ import { ExpansionPanelsModule } from 'ng2-expansion-panels';
 
 import { AuthGuard } from './common/auth.guard';
 import {RegisterComponent} from "./components/register/register.component";
+import {LessonSlidesComponent} from "./components/lessonslides/lessonslides.component";
+// import {SlidesModule} from "ng2-slides";
 
 @NgModule({
   imports: [
@@ -30,7 +32,8 @@ import {RegisterComponent} from "./components/register/register.component";
     ReactiveFormsModule,
     routing,
     MaterialModule.forRoot(),
-    ExpansionPanelsModule
+    ExpansionPanelsModule,
+    // SlidesModule
     ],
   declarations: [
     AppComponent,
@@ -39,7 +42,8 @@ import {RegisterComponent} from "./components/register/register.component";
     HeroDetailComponent,
     DashboardStudentComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    LessonSlidesComponent
   ],
   providers: [
     HeroService,

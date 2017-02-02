@@ -7,6 +7,7 @@ import { HeroDetailComponent }  from './components/heroDetail/hero-detail.compon
 import { AuthGuard } from './common/auth.guard';
 import { LoginComponent } from './components/login/login.component';
 import {RegisterComponent} from "./components/register/register.component";
+import {LessonSlidesComponent} from "./components/lessonslides/lessonslides.component";
 
 
 const appRoutes: Routes = [
@@ -34,6 +35,11 @@ const appRoutes: Routes = [
   {
     path: 'dashboard-studens',
     component: DashboardComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'lessons/:topic/:chapter',
+    component: LessonSlidesComponent,
     canActivate: [AuthGuard]
   },
   {

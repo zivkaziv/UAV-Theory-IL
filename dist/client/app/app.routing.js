@@ -7,6 +7,7 @@ var hero_detail_component_1 = require("./components/heroDetail/hero-detail.compo
 var auth_guard_1 = require("./common/auth.guard");
 var login_component_1 = require("./components/login/login.component");
 var register_component_1 = require("./components/register/register.component");
+var lessonslides_component_1 = require("./components/lessonslides/lessonslides.component");
 var appRoutes = [
     {
         path: '',
@@ -32,6 +33,11 @@ var appRoutes = [
     {
         path: 'dashboard-studens',
         component: dashboard_component_1.DashboardComponent,
+        canActivate: [auth_guard_1.AuthGuard]
+    },
+    {
+        path: 'lessons/:topic/:chapter',
+        component: lessonslides_component_1.LessonSlidesComponent,
         canActivate: [auth_guard_1.AuthGuard]
     },
     {

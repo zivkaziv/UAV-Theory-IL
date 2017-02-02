@@ -23,6 +23,8 @@ var material_1 = require("@angular/material");
 var ng2_expansion_panels_1 = require("ng2-expansion-panels");
 var auth_guard_1 = require("./common/auth.guard");
 var register_component_1 = require("./components/register/register.component");
+var lessonslides_component_1 = require("./components/lessonslides/lessonslides.component");
+// import {SlidesModule} from "ng2-slides";
 var AppModule = (function () {
     function AppModule() {
     }
@@ -37,7 +39,7 @@ AppModule = __decorate([
             forms_1.ReactiveFormsModule,
             app_routing_1.routing,
             material_1.MaterialModule.forRoot(),
-            ng2_expansion_panels_1.ExpansionPanelsModule
+            ng2_expansion_panels_1.ExpansionPanelsModule,
         ],
         declarations: [
             app_component_1.AppComponent,
@@ -46,7 +48,8 @@ AppModule = __decorate([
             hero_detail_component_1.HeroDetailComponent,
             dashboardstudent_component_1.DashboardStudentComponent,
             login_component_1.LoginComponent,
-            register_component_1.RegisterComponent
+            register_component_1.RegisterComponent,
+            lessonslides_component_1.LessonSlidesComponent
         ],
         providers: [
             hero_service_1.HeroService,
