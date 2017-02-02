@@ -24,6 +24,7 @@ var ng2_expansion_panels_1 = require("ng2-expansion-panels");
 var auth_guard_1 = require("./common/auth.guard");
 var register_component_1 = require("./components/register/register.component");
 var lessonslides_component_1 = require("./components/lessonslides/lessonslides.component");
+var loaded_directive_1 = require("./directives/loaded/loaded.directive");
 // import {SlidesModule} from "ng2-slides";
 var AppModule = (function () {
     function AppModule() {
@@ -49,7 +50,8 @@ AppModule = __decorate([
             dashboardstudent_component_1.DashboardStudentComponent,
             login_component_1.LoginComponent,
             register_component_1.RegisterComponent,
-            lessonslides_component_1.LessonSlidesComponent
+            lessonslides_component_1.LessonSlidesComponent,
+            loaded_directive_1.LoadedDirective
         ],
         providers: [
             hero_service_1.HeroService,

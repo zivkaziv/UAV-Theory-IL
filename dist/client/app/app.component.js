@@ -11,8 +11,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var authentication_service_1 = require("./services/authentication.service");
 var AppComponent = (function () {
-    function AppComponent(authService) {
+    function AppComponent(authService, elementRef) {
         this.authService = authService;
+        this.elementRef = elementRef;
         this.title = 'Tour of Heroes';
         this.meteorologyChapters = [
             {
@@ -333,6 +334,10 @@ var AppComponent = (function () {
             }
         ];
     }
+    AppComponent.prototype.ngOnInit = function () {
+        //stop the loading
+        this.elementRef.nativeElement.parentElement.setAttribute('class', 'loaded');
+    };
     return AppComponent;
 }());
 AppComponent = __decorate([
@@ -341,7 +346,8 @@ AppComponent = __decorate([
         templateUrl: './app/app.html',
         styleUrls: ['./app/app.component.css']
     }),
-    __metadata("design:paramtypes", [authentication_service_1.AuthenticationService])
+    __metadata("design:paramtypes", [authentication_service_1.AuthenticationService,
+        core_1.ElementRef])
 ], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map

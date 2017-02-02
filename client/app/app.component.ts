@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit, ElementRef} from '@angular/core';
 import { AuthenticationService } from './services/authentication.service';
 
 @Component({
@@ -7,12 +7,18 @@ import { AuthenticationService } from './services/authentication.service';
     styleUrls: ['./app/app.component.css']
 })
 
-export class AppComponent {
+export class AppComponent{
+    title = 'Tour of Heroes';
+
     constructor(
-        private authService: AuthenticationService) {
+        private authService: AuthenticationService,
+        protected elementRef: ElementRef) {
          }
 
-    title = 'Tour of Heroes';
+    ngOnInit() {
+        //stop the loading
+        this.elementRef.nativeElement.parentElement.setAttribute('class','loaded')
+    }
 
     meteorologyChapters = [
         {

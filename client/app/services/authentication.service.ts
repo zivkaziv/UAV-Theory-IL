@@ -42,7 +42,7 @@ export class AuthenticationService {
         return true;
     }
 
-    register(user: User){
+    register(user: User) {
         let body = JSON.stringify(user);
         this.http.post('/api/auth/account', body, { headers: contentHeaders })
             .subscribe(

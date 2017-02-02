@@ -22,6 +22,7 @@ import { ExpansionPanelsModule } from 'ng2-expansion-panels';
 import { AuthGuard } from './common/auth.guard';
 import {RegisterComponent} from "./components/register/register.component";
 import {LessonSlidesComponent} from "./components/lessonslides/lessonslides.component";
+import {LoadedDirective} from "./directives/loaded/loaded.directive";
 // import {SlidesModule} from "ng2-slides";
 
 @NgModule({
@@ -43,7 +44,8 @@ import {LessonSlidesComponent} from "./components/lessonslides/lessonslides.comp
     DashboardStudentComponent,
     LoginComponent,
     RegisterComponent,
-    LessonSlidesComponent
+    LessonSlidesComponent,
+    LoadedDirective
   ],
   providers: [
     HeroService,
